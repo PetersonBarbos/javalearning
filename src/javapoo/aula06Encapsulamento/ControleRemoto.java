@@ -35,6 +35,47 @@ public class ControleRemoto implements Controlador{
     }
     public void abrirMenu(){
         System.out.println("O aparelho está ligado? "+this.getLigado());
-        //continua...
+        System.out.println("Está tocando? "+ this.getTocando());
+        System.out.println("volume: " + this.getVolume());
+        for (int i = 10; i<= this.getVolume(); i+=10){
+            System.out.print("|");
+        }
+    }
+    public void fecharMenu(){
+        System.out.println("Fechando menu...");
+    }
+    public void maisVolume(){
+        if (this.getLigado() && this.getTocando()){
+            this.setVolume(this.getVolume()+5);
+        } else{
+            System.out.println("Tente ligar o aparelho ou dar play");
+        }
+    }
+    public void menosVolume(){
+        if (this.getLigado() && this.getTocando()){
+            this.setVolume(this.getVolume()-5);
+        } else{
+            System.out.println("Tente ligar o aparelho ou dar play");
+        }
+    }
+    public void ligarMudo(){
+        if(this.getLigado() && this.getTocando() && this.getVolume()>0){
+            this.setVolume(0);
+        }
+    }
+    public void desligarMudo(){
+        if(this.getLigado() && this.getTocando() && this.getVolume()==0){
+            this.setVolume(50);
+        }
+    }
+    public void play(){
+        if(this.getLigado()&& !(this.getTocando())){
+            this.setTocando(true);
+        }
+    }
+    public void pause(){
+        if(this.getLigado()&& this.getTocando()){
+            this.setTocando(false);
+        }
     }
 }
