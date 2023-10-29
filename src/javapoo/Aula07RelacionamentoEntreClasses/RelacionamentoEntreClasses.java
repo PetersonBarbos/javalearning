@@ -13,22 +13,45 @@ public class RelacionamentoEntreClasses {
         l[5] = new Lutador("Nerdaard","EUA",30,1.81f,105.7f,12,2,4);
         Scanner tecl = new Scanner(System.in);
         int i = 0;
-        System.out.println("Qual lutador você deseja ver?: ");
-        int numDeLut = tecl.nextInt();
-        if(numDeLut < 0 || numDeLut > 5){
+        
+        while (i!=5){
+            System.out.println("------------------------------------------");
+            System.out.println("Qual lutador você deseja ver[0 a 5]?: ");
+            int numDeLut = tecl.nextInt();
+            if(numDeLut < 0 || numDeLut > 5){
             System.out.println("Por favor selecione de 0 a 5");
             numDeLut = tecl.nextInt();
-        }
-        while (i!=5){
+            }
+            System.out.println("------------------------------------------");
             System.out.println("Pressione 1 para ver a apresentação do lutador");
             System.out.println("Pressione 2 para ver o status do lutador");
-            System.out.println("Pressione 5 para finalizar");
+            System.out.println("Pressione qualquer outro número para ir para a luta");
+            System.out.println("------------------------------------------");
             i = tecl.nextInt();
             if (i == 1){
                 l[numDeLut].apresentar();
             } else if(i==2){
                 l[numDeLut].status();
             }
+            System.out.println("------------------------------------------");
+            System.out.println("Pressione 5 para finalizar ou qualquer número para marcar uma luta");
+            i = tecl.nextInt();
+            System.out.println("------------------------------------------");
+            if(i!=5){
+                System.out.println("Escolha o lutador desafiante [0 a 5]");
+                int ante = tecl.nextInt();
+                System.out.println("Escolha o desafiado");
+                int ado = tecl.nextInt();
+                Luta uec = new Luta();
+                uec.marcarLuta(l[ado],l[ante]);
+                uec.lutar();
+                System.out.println("------------------------------------------");
+                System.out.println("Pressione 5 para finalizar ou qualquer número para fazer tudo denovo");
+                i = tecl.nextInt();
+                System.out.println("------------------------------------------");
+            }
+            
+
         }
         tecl.close();
     }
