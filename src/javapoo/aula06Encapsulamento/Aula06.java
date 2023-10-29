@@ -31,5 +31,6 @@ public class Aula06 {
                 c.desligar();
             }
         }
+        tecl.close();
     }
 }
