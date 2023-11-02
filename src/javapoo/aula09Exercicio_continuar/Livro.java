@@ -1,4 +1,4 @@
-public class Livro {
+public class Livro implements InterfaceLivro {
     private String titulo;
     private String autor;
     private int totPags;

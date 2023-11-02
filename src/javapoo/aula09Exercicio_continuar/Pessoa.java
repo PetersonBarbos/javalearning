@@ -1,8 +1,8 @@
 public class Pessoa{
     private String nome;
     private int idade;
-    private char sexo;
-    public Pessoa(String no, int id, char sx){
+    private String sexo;
+    public Pessoa(String no, int id, String sx){
         this.nome = no;
         this.idade = id;
         this.sexo = sx;
@@ -19,10 +19,10 @@ public class Pessoa{
     public void setIdade(int id){
         this.idade = id;
     }
-    public char getSexo(){
+    public String getSexo(){
         return sexo;
     }
-    public void setSexo(char sx){
+    public void setSexo(String sx){
         this.sexo = sx;
     }
     public void fazerAniversario(){

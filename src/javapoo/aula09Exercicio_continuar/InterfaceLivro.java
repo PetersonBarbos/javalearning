@@ -1,4 +1,4 @@
-public interface interfaceLivro {
+public interface InterfaceLivro {
     public abstract void abrir();
     public abstract void fechar();
     public abstract void folhear();
