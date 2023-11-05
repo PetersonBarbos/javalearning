@@ -37,5 +37,6 @@ public class Aula09Exercicio {
         }
         //criar os livros, e aplicar os metodos
         tecl.close();
+        
     }
 }
