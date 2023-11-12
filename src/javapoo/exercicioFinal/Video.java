@@ -1,23 +1,28 @@
 public class Video implements AcoesVideo {
-    private String titulo, avaliacao;
-    private int views, curtidas;
+    private String titulo;
+    private int views, curtidas, avaliacao;
     private boolean reproduzindo;
+    
+    public Video(String titulo){
+        this.titulo = titulo;
+        this.avaliacao = 1;
+        this.views = 0;
+        this.curtidas = 0;
+        this.reproduzindo = false;
+    }
     @Override
     public void play() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'play'");
+        this.reproduzindo = true;
     }
 
     @Override
     public void pause() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pause'");
+        this.reproduzindo = false;
     }
 
     @Override
     public void like() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'like'");
+        this.curtidas++;
     }
     public String getTitulo(){
         return titulo;
@@ -25,10 +30,10 @@ public class Video implements AcoesVideo {
     public void setTitulo(String tit){
         this.titulo = tit;
     }
-    public String getAvaliacao(){
+    public int getAvaliacao(){
         return avaliacao;
     }
-    public void setAvaliacao(String avalia){
+    public void setAvaliacao(int avalia){
         this.avaliacao = avalia;
     }
     public int getViews(){
@@ -49,5 +54,9 @@ public class Video implements AcoesVideo {
     public void setReproduzindo(boolean reproduziu){
         this.reproduzindo = reproduziu;
     }
-    
+    @Override
+    public String toString() {
+        return "Video{Título: "+this.titulo+", views: "+this.views+", avaliação: "
+        +this.avaliacao+", curtidas: "+this.curtidas+", reproduzindo: "+this.reproduzindo+"}";
+    }
 }

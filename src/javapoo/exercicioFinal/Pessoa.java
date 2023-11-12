@@ -2,6 +2,11 @@ public abstract class Pessoa {
     protected String nome, sexo, experiencia;
     protected int idade;
 
+    public Pessoa(String no, int id, String sx){
+        this.nome = no;
+        this.idade = id;
+        this.sexo = sx;
+    }
     public abstract void ganharExperiencia();
     public String getNome(){
         return nome;
@@ -27,5 +32,7 @@ public abstract class Pessoa {
     public void setIdade(int id){
         this.idade = id;
     }
-
+    public String toString() {
+        return "Pessoa{Nome: "+this.nome+", idade: "+this.idade+", sexo: "+this.sexo+"}";
+    }
 }
